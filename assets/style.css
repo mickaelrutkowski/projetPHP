@@ -1,0 +1,612 @@
+@import url(https://fonts.googleapis.com/css?family=Vollkorn|Roboto);
+
+.button_container {
+    position: fixed;
+    top: 5%;
+    right: 2%;
+    height: 27px;
+    width: 35px;
+    cursor: pointer;
+    z-index: 100;
+    transition: opacity .25s ease;
+}
+
+.button_container:hover {
+    opacity: .7;
+}
+
+.button_container.active .top {
+    -webkit-transform: translateY(11px) translateX(0) rotate(45deg);
+    transform: translateY(11px) translateX(0) rotate(45deg);
+    background: #FFF;
+}
+
+.button_container.active .middle {
+    opacity: 0;
+    background: #FFF;
+}
+
+.button_container.active .bottom {
+    -webkit-transform: translateY(-11px) translateX(0) rotate(-45deg);
+    transform: translateY(-11px) translateX(0) rotate(-45deg);
+    background: #FFF;
+}
+
+.button_container span {
+    background: #246082;
+    border: none;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .35s ease;
+    cursor: pointer;
+}
+
+.button_container span:nth-of-type(2) {
+    top: 11px;
+}
+
+.button_container span:nth-of-type(3) {
+    top: 22px;
+}
+
+.overlay {
+    position: fixed;
+    background: #246082;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+}
+
+.overlay.open {
+    opacity: .9;
+    visibility: visible;
+    height: 100%;
+}
+
+.overlay.open li {
+    -webkit-animation: fadeInRight .5s ease forwards;
+    animation: fadeInRight .5s ease forwards;
+    -webkit-animation-delay: .35s;
+    animation-delay: .35s;
+}
+
+.overlay.open li:nth-of-type(2) {
+    -webkit-animation-delay: .4s;
+    animation-delay: .4s;
+}
+
+.overlay.open li:nth-of-type(3) {
+    -webkit-animation-delay: .45s;
+    animation-delay: .45s;
+}
+
+.overlay.open li:nth-of-type(4) {
+    -webkit-animation-delay: .50s;
+    animation-delay: .50s;
+}
+
+.overlay nav {
+    position: relative;
+    height: 70%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 50px;
+    font-family: 'Vollkorn', serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+    position: relative;
+    height: 100%;
+}
+
+.overlay ul li {
+    display: block;
+    height: 25%;
+    height: calc(100% / 4);
+    min-height: 50px;
+    position: relative;
+    opacity: 0;
+}
+
+.overlay ul li a {
+    display: block;
+    position: relative;
+    color: #FFF;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.overlay ul li a:hover:after, .overlay ul li a:focus:after, .overlay ul li a:active:after {
+    width: 100%;
+}
+
+.overlay ul li a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    height: 3px;
+    background: #FFF;
+    transition: .35s;
+}
+
+@-webkit-keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        left: 20%;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        left: 20%;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+p.caption-text{
+    font-size: 30px;
+    color: black;
+    border-radius: 45%;
+    font-family: 'Vollkorn', serif;
+}
+
+p{ 
+    padding: 0 0 20px 0;
+    line-height: 1.7em;
+    text-align: center;
+    font-size: 17px;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+    font: normal 175% 'Vollkorn', arial, sans-serif;
+    color: #43423F;
+    margin: 0 0 15px 0;
+    padding: 15px 0 5px 0;
+    text-align: center;
+}
+
+h2 {
+    font: normal 145% 'Vollkorn', arial, sans-serif;
+    color: #1293EE;
+    border-bottom: solid 1px;
+}
+
+#texte{
+    text-align: center;
+}
+
+div.img{
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 43%;
+    transition: transform .2s;
+    margin-top: 3%;
+}
+
+img:hover {
+    transform: scale(1.5);
+}
+
+img {
+    width: 100%;
+    border-radius: 25%;
+    transition: transform .2s;
+}
+
+.img1{
+    margin-top: 30%;
+}
+
+#realisation{
+    font-size: 40px;
+}
+
+ul {
+    margin: 0px 0 60px 0px;
+    padding-right: 30px;
+}
+
+#main {
+    background-image: url(https://img.freepik.com/free-photo/white-concrete-wall-for-background_1249-263.jpg?size=338&ext=jpg);
+}
+
+#main, #logo, #menubar, #site_content, #footer {
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+#header {
+    background-image: url(http://schlyce.com/product/btp/wp-content/plugins/wpi-designer-button-shortcode/images/help_bg2.png);
+    background-size: 100%;
+    height: 150px;
+    position: fixed;
+    width: 100%;
+}
+
+#logo {
+    width: 825px;
+    position: relative;
+    height: 120px;
+}
+
+#logo #logo_text {
+    position: absolute; 
+    top: 20px;
+    left: 0;
+}
+
+#logo h1, #logo h2 {
+    font: normal 300% 'century gothic', arial, sans-serif;
+    border-bottom: 0;
+    text-transform: none;
+    margin: 0;
+}
+
+#logo_text h1, #logo_text h1 a, #logo_text h1 a:hover {
+    padding: 20px 0 0 0;
+    color: #FFF;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+}
+
+#logo_text h1 a .logo_colour {
+    color: #1293EE;
+}
+
+#logo_text h2 {
+    font-size: 100%;
+    padding: px 40 10 40;
+    color: #DDD;
+}
+
+#menubar {
+    width: 904px;
+    height: 55px;
+    padding: 0;
+    background: #1293EE;
+} 
+
+ul#menu, ul#menu li {
+    float: left;
+    margin: 0; 
+    padding: 0;
+}
+
+ul#menu li {
+    list-style: none;
+}
+
+ul#menu li a {
+    letter-spacing: 0.1em;
+    font: normal 100% arial, sans-serif;
+    display: block; 
+    float: left; 
+    height: 37px;
+    padding: 20px 33px 17px 39px;
+    text-align: center;
+    color: #FFF;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: transparent;
+} 
+
+ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover {
+    color: #FFF;
+    background: #0D66A5;
+    height: 100%;
+}
+
+#site_content {
+    width: 880px;
+    overflow: hidden; 
+    padding: 200px 24px 20px 37px;
+} 
+
+.sidebar li {
+    list-style: none; 
+    padding: 0 0 7px 0; 
+    text-align: center;
+  
+}
+
+.sidebar li a, .sidebar li a:hover {
+    padding: 0 0 0 40px;
+    display: block;
+    background: transparent url(link.png) no-repeat left center;
+} 
+
+#footer {
+    width: 910px;
+    font: normal 100% 'lucida sans unicode', arial, sans-serif;
+    height: 83px;
+    padding: 24px 0 0px 0;
+    text-align: center; 
+    background: #1293EE;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+#footer a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width: 900px) {
+    
+    .overlay nav {
+        position: relative;
+        height: 70%;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        font-size: 30px;
+        font-family: 'Vollkorn', serif;
+        font-weight: 400;
+        text-align: center;
+    }
+    
+    #menubar {
+        display: none;
+    }
+    
+    p.caption-text {
+        font-size: 20px;
+        color:white;
+    }
+    
+    p { 
+        padding: 0 0 20px 0;
+        line-height: 1.7em;
+        text-align: center;
+        font-size: 14px;
+    }
+    
+    h2 {
+        font: normal 185% 'Vollkorn', arial, sans-serif;
+        color: #1293EE;
+        border-bottom: solid 1px;
+    }
+    
+    #texte {
+        text-align: center;
+        width: 80%;
+        margin-left: 10%;
+    }
+    
+    img {
+        border-radius: 20%;
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+    
+    div.img {
+        width: 50%;
+        height: 50%;
+        align-items: center;    
+        background-color: black;
+        border-radius: 20%;
+        transition: transform .2s;
+    }
+    
+    .img1 {
+        margin-top: 30%;
+    }
+    
+    ul {
+        margin: 2px 0 22px 17px;
+    }
+    
+    #header {
+        background-image: url(http://schlyce.com/product/btp/wp-content/plugins/wpi-designer-button-shortcode/images/help_bg2.png);
+        background-size: 100%;
+        height: 20%;
+        width: 100%;
+    }
+    
+    iframe {
+       width: 80%; 
+    }
+    
+    #logo {
+        width: 825px;
+        position: relative;
+        height: 168px;
+    }
+    
+    #logo #logo_text {
+        position: absolute; 
+        top: 20px;
+        left: 0;
+    }
+    
+    #logo h1, #logo h2 {
+        font: normal 300% 'century gothic', arial, sans-serif;
+        border-bottom: 0;
+        text-transform: none;
+        margin: 0;
+    }
+    
+    #logo_text h1, #logo_text h1 a, #logo_text h1 a:hover {
+        font-size: 140%;
+        color: #FFF;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+    }
+    
+    #logo_text h2 {
+        font-size: 100%;       
+        color: #DDD;
+    }
+}
+
+
+@media screen and (max-width: 700px){
+    
+    p.caption-text {
+        font-size: 15px;
+        width: 35%;
+        color: black;
+        margin-right: 45%;
+    }
+    
+    p { 
+        padding: 0 0 20px 0;
+        line-height: 1.7em;
+        text-align: center;
+        font-size: 12px;
+        width: 100%;
+    }
+    #carte{
+        width: 35%;
+        
+    }
+    
+    h1, h3, h4, h5, h6 { 
+        font: normal 100% 'Vollkorn', arial, sans-serif;
+        color: #43423F;
+        width: 30%;        
+        text-align: center;
+    }
+    
+    #realisation {
+        width: 30%;
+        font-size: 20px;
+    }
+    
+    h2 {
+        font: normal 90% 'Vollkorn', arial, sans-serif;
+        color: #1293EE;
+        border-bottom: solid 1px;
+        text-align: center;
+        width: 42%;
+    }
+    
+    #texte {
+        text-align: center;
+        width: 35%;
+        padding-right: 18%;
+        margin-left: 50px;
+    }
+    
+    img {
+        border-radius: 20%;
+        display: block;
+        max-width: 35%;
+        height: auto;
+    }
+    
+    div.gallery_box_single {
+        margin-right: 65%;
+    }
+    
+    img:hover {
+        transform: scale(1.9);
+        width: 150%;
+    }
+    .sidebar li {
+    list-style: none; 
+    padding: 0 0 7px 0; 
+    text-align: center;
+    width: 100%
+}
+    div.img {
+        color: black;
+        background: none;       
+        margin-right: 60px;
+        border-radius: 20%;
+        width: 100%;
+        transition: transform .2s;
+    }
+    
+    .img1{
+        margin-top: 25%;
+        padding-right: 10%;
+    }
+    
+    ul {
+        margin: 2px 0 22px 17px;
+      width: 35%;
+      padding-right: 10%;
+    }
+    
+    #header {
+        background-image: url(http://schlyce.com/product/btp/wp-content/plugins/wpi-designer-button-shortcode/images/help_bg2.png);
+        background-size: 100%;
+        height: 20%;
+        width: 100%;
+    }
+    form.form{
+        width: 35%;
+    }
+    iframe {
+     width: 100%;   
+    }
+    
+    #logo #logo_text {
+        position: absolute; 
+        top: 20px;
+        left: 0;
+    }
+    
+    #logo h1, #logo h2 {
+        font: normal 90% 'century gothic', arial, sans-serif;
+        border-bottom: 0;
+        text-transform: none;
+        margin: 0;
+        text-align: center;
+    }
+    
+    #logo_text h1, #logo_text h1 a, #logo_text h1 a:hover {
+        font-size:120%;
+        color: #FFF;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        margin-left: 8%;
+    }
+    
+    #logo_text h1 a .logo_colour {
+        color: #1293EE;
+    }
+    
+    #logo_text h2 {
+        font-size: 100%;    
+        margin-left: 25%;
+        color: #DDD;
+        
+    }
+}
